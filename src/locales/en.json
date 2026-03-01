@@ -1,0 +1,68 @@
+{
+  "site_name": "National Registry of ICH of Kazakhstan",
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "bearers": "Bearers",
+    "news": "News",
+    "search": "Search",
+    "admin": "Admin",
+    "login": "Login"
+  },
+  "hero": {
+    "title": "Intangible Cultural Heritage of Kazakhstan",
+    "subtitle": "Preserving and promoting the spiritual wealth of our nation",
+    "search_placeholder": "Search cultural heritage elements...",
+    "explore": "Explore Catalog"
+  },
+  "sections": {
+    "latest_news": "Latest News",
+    "featured_elements": "Featured Elements",
+    "map_title": "Interactive Map",
+    "map_subtitle": "Location of intangible cultural heritage elements across Kazakhstan",
+    "resources": "International Resources",
+    "view_all": "View All",
+    "no_results": "No results found"
+  },
+  "footer": {
+    "description": "A UNESCO-supported project for registering Kazakhstan's intangible cultural heritage.",
+    "contact": "Contact",
+    "links": "Useful Links",
+    "unesco": "Official UNESCO Website",
+    "ich_convention": "ICH Convention",
+    "copyright": "© 2026 ICH Registry. All rights reserved."
+  },
+  "filters": {
+    "region": "Region",
+    "domain": "UNESCO Domain",
+    "search": "Search",
+    "clear": "Clear",
+    "all_regions": "All Regions",
+    "all_domains": "All Domains"
+  },
+  "element": {
+    "region": "Region",
+    "domain": "UNESCO Domain",
+    "description": "Description",
+    "detailed_description": "Detailed Description",
+    "protection_status": "Protection Status",
+    "date_added": "Date Added",
+    "related_bearers": "Related Bearers",
+    "media": "Media Gallery",
+    "location": "Location"
+  },
+  "bearer": {
+    "biography": "Biography",
+    "elements": "ICH Elements",
+    "awards": "Awards",
+    "interviews": "Interviews"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "read_more": "Read More",
+    "share": "Share"
+  }
+}
