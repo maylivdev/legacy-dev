@@ -93,7 +93,7 @@ export default function MapView({ elements, height = '600px', showReset = true }
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {showReset && <ResetViewButton />}
-        <MarkerClusterGroup chunkedLoading>
+        <MarkerClusterGroup>
           {markers.map(({ el, icon, region, domain }) => (
             <Marker key={el.id} position={[el.latitude, el.longitude]} icon={icon}>
               <Popup>
