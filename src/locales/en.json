@@ -6,6 +6,7 @@
     "bearers": "Bearers",
     "news": "News",
     "search": "Search",
+    "map": "Map",
     "admin": "Admin",
     "login": "Login"
   },
@@ -64,5 +65,61 @@
     "back": "Back",
     "read_more": "Read More",
     "share": "Share"
+  },
+  "catalog": {
+    "title": "ICH Elements Catalog",
+    "search_placeholder": "Search by name...",
+    "filter_region": "Region",
+    "filter_domain": "UNESCO Domain",
+    "sort_by": "Sort by",
+    "sort_name_asc": "Name (A-Z)",
+    "sort_name_desc": "Name (Z-A)",
+    "sort_date_new": "Newest first",
+    "sort_date_old": "Oldest first",
+    "reset_filters": "Reset filters",
+    "showing_results": "Showing {{from}}-{{to}} of {{total}}",
+    "no_results": "No elements found",
+    "no_results_hint": "Try changing your search query or filters",
+    "view_details": "View details"
+  },
+  "bearers_page": {
+    "title": "ICH Bearers",
+    "search_placeholder": "Search by name...",
+    "view_profile": "View profile",
+    "practices": "Practices",
+    "no_results": "No bearers found"
+  },
+  "news_page": {
+    "title": "News",
+    "search_placeholder": "Search news...",
+    "read_more": "Read more",
+    "no_results": "No news found",
+    "category": {
+      "new_elements": "New Elements",
+      "festivals": "Festivals",
+      "research": "Research",
+      "cooperation": "Cooperation",
+      "education": "Education",
+      "publications": "Publications"
+    },
+    "all_categories": "All categories"
+  },
+  "search_page": {
+    "title": "Search",
+    "placeholder": "What are you looking for?",
+    "all": "All",
+    "elements": "Elements",
+    "bearers_tab": "Bearers",
+    "news_tab": "News",
+    "results_count": "{{count}} results",
+    "no_results": "No results found",
+    "type_to_search": "Type your query to search"
+  },
+  "map_page": {
+    "title": "ICH Elements Map",
+    "legend": "Legend",
+    "reset_view": "Reset view",
+    "view_full_map": "View full map",
+    "view_details": "View details"
   }
 }

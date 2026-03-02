@@ -7,6 +7,9 @@ import { Input } from '@/components/ui/input';
 import { SAMPLE_ELEMENTS, SAMPLE_NEWS, UNESCO_DOMAINS, REGIONS } from '@/data/seed';
 import { getLocalizedField } from '@/types';
 import type { Language } from '@/types';
+import ElementCard from '@/components/elements/ElementCard';
+import NewsCard from '@/components/news/NewsCard';
+import MapView from '@/components/map/MapView';
 
 export default function Index() {
   const { t, i18n } = useTranslation();
@@ -33,10 +36,13 @@ export default function Index() {
             <div className="mx-auto flex max-w-lg gap-2">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 opacity-50" />
-                <Input
-                  placeholder={t('hero.search_placeholder')}
-                  className="h-12 border-primary-foreground/20 bg-primary-foreground/10 pl-10 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
-                />
+                <Link to="/search" className="block">
+                  <Input
+                    placeholder={t('hero.search_placeholder')}
+                    className="h-12 border-primary-foreground/20 bg-primary-foreground/10 pl-10 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 cursor-pointer"
+                    readOnly
+                  />
+                </Link>
               </div>
               <Link to="/catalog">
                 <Button size="lg" variant="secondary" className="h-12 font-semibold">
@@ -60,54 +66,28 @@ export default function Index() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SAMPLE_ELEMENTS.map((el) => {
-            const region = REGIONS.find((r) => r.id === el.region_id);
-            const domain = UNESCO_DOMAINS.find((d) => d.id === el.unesco_domain_id);
-            return (
-              <Link key={el.id} to={`/catalog/${el.id}`}>
-                <Card className="group h-full overflow-hidden transition-shadow hover:shadow-lg">
-                  <div className="aspect-[16/10] bg-muted flex items-center justify-center">
-                    <MapPin className="h-12 w-12 text-muted-foreground/30" />
-                  </div>
-                  <CardContent className="p-5">
-                    <div className="mb-2 flex items-center gap-2">
-                      <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                        {domain ? getLocalizedField(domain, 'name', lang) : ''}
-                      </span>
-                    </div>
-                    <h3 className="mb-1 font-semibold text-lg group-hover:text-primary transition-colors">
-                      {getLocalizedField(el, 'name', lang)}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">
-                      {getLocalizedField(el, 'brief_description', lang)}
-                    </p>
-                    {region && (
-                      <p className="mt-3 flex items-center gap-1 text-xs text-muted-foreground">
-                        <MapPin className="h-3 w-3" />
-                        {getLocalizedField(region, 'name', lang)}
-                      </p>
-                    )}
-                  </CardContent>
-                </Card>
-              </Link>
-            );
-          })}
+          {SAMPLE_ELEMENTS.slice(0, 6).map((el) => (
+            <ElementCard key={el.id} element={el} />
+          ))}
         </div>
       </section>
 
-      {/* Map Preview */}
+      {/* Interactive Map */}
       <section className="bg-muted py-16">
         <div className="container">
           <div className="mb-8 text-center">
             <h2 className="text-2xl font-bold">{t('sections.map_title')}</h2>
             <p className="mt-2 text-muted-foreground">{t('sections.map_subtitle')}</p>
           </div>
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-xl border bg-card shadow-sm">
-            <div className="flex aspect-[16/9] items-center justify-center bg-muted text-muted-foreground">
-              <div className="text-center">
-                <MapPin className="mx-auto mb-2 h-16 w-16 opacity-30" />
-                <p className="text-sm opacity-60">Interactive map — coming soon</p>
-              </div>
+          <div className="mx-auto max-w-5xl">
+            <MapView elements={SAMPLE_ELEMENTS} height="400px" showReset={false} />
+            <div className="mt-4 text-center">
+              <Link to="/map">
+                <Button variant="outline" className="gap-2">
+                  <MapPin className="h-4 w-4" />
+                  {t('map_page.view_full_map')}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -124,24 +104,8 @@ export default function Index() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SAMPLE_NEWS.map((news) => (
-            <Card key={news.id} className="overflow-hidden transition-shadow hover:shadow-lg">
-              <div className="aspect-[16/9] bg-muted flex items-center justify-center">
-                <div className="h-10 w-10 rounded bg-secondary/30" />
-              </div>
-              <CardContent className="p-5">
-                <span className="mb-2 inline-block rounded-full bg-secondary/20 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground">
-                  {news.category.replace('_', ' ')}
-                </span>
-                <h3 className="mb-1 font-semibold">
-                  {getLocalizedField(news, 'title', lang)}
-                </h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  {getLocalizedField(news, 'content', lang)}
-                </p>
-                <p className="mt-3 text-xs text-muted-foreground">{news.published_at}</p>
-              </CardContent>
-            </Card>
+          {SAMPLE_NEWS.slice(0, 3).map((news) => (
+            <NewsCard key={news.id} news={news} />
           ))}
         </div>
       </section>
