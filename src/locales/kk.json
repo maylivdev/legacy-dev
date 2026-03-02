@@ -6,6 +6,7 @@
     "bearers": "Жеткізушілер",
     "news": "Жаңалықтар",
     "search": "Іздеу",
+    "map": "Карта",
     "admin": "Әкімшілік",
     "login": "Кіру"
   },
@@ -64,5 +65,61 @@
     "back": "Артқа",
     "read_more": "Толығырақ",
     "share": "Бөлісу"
+  },
+  "catalog": {
+    "title": "МЕМ элементтерінің каталогы",
+    "search_placeholder": "Атауы бойынша іздеу...",
+    "filter_region": "Аймақ",
+    "filter_domain": "ЮНЕСКО домені",
+    "sort_by": "Сұрыптау",
+    "sort_name_asc": "Атауы (А-Я)",
+    "sort_name_desc": "Атауы (Я-А)",
+    "sort_date_new": "Жаңалары",
+    "sort_date_old": "Ескілері",
+    "reset_filters": "Сүзгілерді тазалау",
+    "showing_results": "{{from}}-{{to}} / {{total}} көрсетілуде",
+    "no_results": "Элементтер табылмады",
+    "no_results_hint": "Іздеу сұрауын немесе сүзгілерді өзгертіп көріңіз",
+    "view_details": "Толығырақ"
+  },
+  "bearers_page": {
+    "title": "МЕМ жеткізушілері",
+    "search_placeholder": "Аты-жөні бойынша іздеу...",
+    "view_profile": "Профильді қарау",
+    "practices": "Практикалайды",
+    "no_results": "Жеткізушілер табылмады"
+  },
+  "news_page": {
+    "title": "Жаңалықтар",
+    "search_placeholder": "Жаңалықтарды іздеу...",
+    "read_more": "Толығырақ оқу",
+    "no_results": "Жаңалықтар табылмады",
+    "category": {
+      "new_elements": "Жаңа элементтер",
+      "festivals": "Фестивальдар",
+      "research": "Зерттеулер",
+      "cooperation": "Ынтымақтастық",
+      "education": "Білім беру",
+      "publications": "Басылымдар"
+    },
+    "all_categories": "Барлық санаттар"
+  },
+  "search_page": {
+    "title": "Іздеу",
+    "placeholder": "Не іздеп жатырсыз?",
+    "all": "Барлығы",
+    "elements": "Элементтер",
+    "bearers_tab": "Жеткізушілер",
+    "news_tab": "Жаңалықтар",
+    "results_count": "{{count}} нәтиже",
+    "no_results": "Нәтиже табылмады",
+    "type_to_search": "Іздеу үшін сұрауыңызды жазыңыз"
+  },
+  "map_page": {
+    "title": "МЕМ элементтерінің картасы",
+    "legend": "Аңыз",
+    "reset_view": "Бастапқы көрініс",
+    "view_full_map": "Толық картаны қарау",
+    "view_details": "Толығырақ"
   }
 }

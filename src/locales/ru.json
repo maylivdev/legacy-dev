@@ -6,6 +6,7 @@
     "bearers": "Носители",
     "news": "Новости",
     "search": "Поиск",
+    "map": "Карта",
     "admin": "Админ",
     "login": "Войти"
   },
@@ -64,5 +65,61 @@
     "back": "Назад",
     "read_more": "Подробнее",
     "share": "Поделиться"
+  },
+  "catalog": {
+    "title": "Каталог элементов НКН",
+    "search_placeholder": "Поиск по названию...",
+    "filter_region": "Регион",
+    "filter_domain": "Домен ЮНЕСКО",
+    "sort_by": "Сортировка",
+    "sort_name_asc": "Название (А-Я)",
+    "sort_name_desc": "Название (Я-А)",
+    "sort_date_new": "Новые",
+    "sort_date_old": "Старые",
+    "reset_filters": "Сбросить фильтры",
+    "showing_results": "Показано {{from}}-{{to}} из {{total}}",
+    "no_results": "Элементы не найдены",
+    "no_results_hint": "Попробуйте изменить поисковый запрос или фильтры",
+    "view_details": "Подробнее"
+  },
+  "bearers_page": {
+    "title": "Носители НКН",
+    "search_placeholder": "Поиск по имени...",
+    "view_profile": "Смотреть профиль",
+    "practices": "Практикует",
+    "no_results": "Носители не найдены"
+  },
+  "news_page": {
+    "title": "Новости",
+    "search_placeholder": "Поиск новостей...",
+    "read_more": "Читать далее",
+    "no_results": "Новости не найдены",
+    "category": {
+      "new_elements": "Новые элементы",
+      "festivals": "Фестивали",
+      "research": "Исследования",
+      "cooperation": "Сотрудничество",
+      "education": "Образование",
+      "publications": "Публикации"
+    },
+    "all_categories": "Все категории"
+  },
+  "search_page": {
+    "title": "Поиск",
+    "placeholder": "Что вы ищете?",
+    "all": "Все",
+    "elements": "Элементы",
+    "bearers_tab": "Носители",
+    "news_tab": "Новости",
+    "results_count": "{{count}} результатов",
+    "no_results": "Ничего не найдено",
+    "type_to_search": "Введите запрос для поиска"
+  },
+  "map_page": {
+    "title": "Карта элементов НКН",
+    "legend": "Легенда",
+    "reset_view": "Сбросить вид",
+    "view_full_map": "Открыть полную карту",
+    "view_details": "Подробнее"
   }
 }

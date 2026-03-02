@@ -28,6 +28,7 @@ export default function Header() {
     { to: '/catalog', label: t('nav.catalog') },
     { to: '/bearers', label: t('nav.bearers') },
     { to: '/news', label: t('nav.news') },
+    { to: '/map', label: t('nav.map') },
   ];
 
   const isActive = (path: string) => location.pathname === path;
