@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Link } from 'react-router-dom';
@@ -93,33 +92,31 @@ export default function MapView({ elements, height = '600px', showReset = true }
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {showReset && <ResetViewButton />}
-        <MarkerClusterGroup>
-          {markers.map(({ el, icon, region, domain }) => (
-            <Marker key={el.id} position={[el.latitude, el.longitude]} icon={icon}>
-              <Popup>
-                <div className="min-w-[180px]">
-                  <h3 className="font-semibold text-sm mb-1">{getLocalizedField(el, 'name', lang)}</h3>
-                  {domain && (
-                    <span
-                      className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium text-white mb-1"
-                      style={{ backgroundColor: DOMAIN_COLORS[el.unesco_domain_id] }}
-                    >
-                      {getLocalizedField(domain, 'name', lang)}
-                    </span>
-                  )}
-                  {region && (
-                    <p className="text-xs text-gray-500 mb-2">
-                      {getLocalizedField(region, 'name', lang)}
-                    </p>
-                  )}
-                  <Link to={`/catalog/${el.id}`} className="text-xs font-medium text-blue-600 hover:underline">
-                    {t('map_page.view_details')} →
-                  </Link>
-                </div>
-              </Popup>
-            </Marker>
-          ))}
-        </MarkerClusterGroup>
+        {markers.map(({ el, icon, region, domain }) => (
+          <Marker key={el.id} position={[el.latitude, el.longitude]} icon={icon}>
+            <Popup>
+              <div className="min-w-[180px]">
+                <h3 className="font-semibold text-sm mb-1">{getLocalizedField(el, 'name', lang)}</h3>
+                {domain && (
+                  <span
+                    className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium text-white mb-1"
+                    style={{ backgroundColor: DOMAIN_COLORS[el.unesco_domain_id] }}
+                  >
+                    {getLocalizedField(domain, 'name', lang)}
+                  </span>
+                )}
+                {region && (
+                  <p className="text-xs text-gray-500 mb-2">
+                    {getLocalizedField(region, 'name', lang)}
+                  </p>
+                )}
+                <Link to={`/catalog/${el.id}`} className="text-xs font-medium text-blue-600 hover:underline">
+                  {t('map_page.view_details')} →
+                </Link>
+              </div>
+            </Popup>
+          </Marker>
+        ))
       </MapContainer>
     </div>
   );
