@@ -121,5 +121,39 @@
     "reset_view": "Бастапқы көрініс",
     "view_full_map": "Толық картаны қарау",
     "view_details": "Толығырақ"
+  },
+  "element_detail": {
+    "brief_description": "Қысқаша сипаттама",
+    "detailed_description": "Толық сипаттама",
+    "photo_gallery": "Фотогалерея",
+    "video_gallery": "Бейне",
+    "audio_files": "Аудиожазбалар",
+    "quick_info": "Ақпарат",
+    "location": "Орналасу",
+    "related_bearers": "Дәстүр жеткізушілері",
+    "share": "Бөлісу",
+    "view_on_map": "Толық картада ашу",
+    "show_all": "Барлығын көрсету",
+    "copy_link": "Сілтемені көшіру",
+    "link_copied": "Сілтеме көшірілді!",
+    "not_found": "Элемент табылмады",
+    "back_to_catalog": "Каталогқа оралу",
+    "status_published": "Жарияланған",
+    "status_draft": "Жоба"
+  },
+  "bearer_detail": {
+    "biography": "Өмірбаян",
+    "awards": "Марапаттар мен мойындаулар",
+    "video_interviews": "Бейнесұхбаттар",
+    "practiced_elements": "МЕМ элементтері",
+    "region": "Қызмет аймағы",
+    "not_found": "Жеткізуші табылмады",
+    "back_to_bearers": "Жеткізушілерге оралу"
+  },
+  "news_detail": {
+    "published_by": "Жарияланды",
+    "back_to_news": "Жаңалықтарға оралу",
+    "related_news": "Ұқсас жаңалықтар",
+    "not_found": "Жаңалық табылмады"
   }
 }
