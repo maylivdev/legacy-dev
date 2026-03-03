@@ -4,7 +4,7 @@ import kk from './locales/kk.json';
 import ru from './locales/ru.json';
 import en from './locales/en.json';
 
-const savedLang = localStorage.getItem('ich-lang') || 'kk';
+const savedLang = typeof window !== 'undefined' ? localStorage.getItem('ich-lang') || 'kk' : 'kk';
 
 i18n.use(initReactI18next).init({
   resources: {
