@@ -116,7 +116,7 @@ export default function MapView({ elements, height = '600px', showReset = true }
               </div>
             </Popup>
           </Marker>
-        ))
+        ))}
       </MapContainer>
     </div>
   );
