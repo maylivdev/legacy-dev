@@ -121,5 +121,39 @@
     "reset_view": "Reset view",
     "view_full_map": "View full map",
     "view_details": "View details"
+  },
+  "element_detail": {
+    "brief_description": "Brief Description",
+    "detailed_description": "Detailed Description",
+    "photo_gallery": "Photo Gallery",
+    "video_gallery": "Video",
+    "audio_files": "Audio Recordings",
+    "quick_info": "Information",
+    "location": "Location",
+    "related_bearers": "Tradition Bearers",
+    "share": "Share",
+    "view_on_map": "View on full map",
+    "show_all": "Show all",
+    "copy_link": "Copy link",
+    "link_copied": "Link copied!",
+    "not_found": "Element not found",
+    "back_to_catalog": "Back to catalog",
+    "status_published": "Published",
+    "status_draft": "Draft"
+  },
+  "bearer_detail": {
+    "biography": "Biography",
+    "awards": "Awards and Recognition",
+    "video_interviews": "Video Interviews",
+    "practiced_elements": "ICH Elements",
+    "region": "Region of Activity",
+    "not_found": "Bearer not found",
+    "back_to_bearers": "Back to bearers"
+  },
+  "news_detail": {
+    "published_by": "Published by",
+    "back_to_news": "Back to news",
+    "related_news": "Related News",
+    "not_found": "News article not found"
   }
 }

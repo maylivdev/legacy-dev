@@ -121,5 +121,39 @@
     "reset_view": "Сбросить вид",
     "view_full_map": "Открыть полную карту",
     "view_details": "Подробнее"
+  },
+  "element_detail": {
+    "brief_description": "Краткое описание",
+    "detailed_description": "Подробное описание",
+    "photo_gallery": "Фотогалерея",
+    "video_gallery": "Видео",
+    "audio_files": "Аудиозаписи",
+    "quick_info": "Информация",
+    "location": "Местоположение",
+    "related_bearers": "Носители традиции",
+    "share": "Поделиться",
+    "view_on_map": "Открыть на полной карте",
+    "show_all": "Показать всех",
+    "copy_link": "Скопировать ссылку",
+    "link_copied": "Ссылка скопирована!",
+    "not_found": "Элемент не найден",
+    "back_to_catalog": "Вернуться к каталогу",
+    "status_published": "Опубликовано",
+    "status_draft": "Черновик"
+  },
+  "bearer_detail": {
+    "biography": "Биография",
+    "awards": "Награды и признание",
+    "video_interviews": "Видеоинтервью",
+    "practiced_elements": "Элементы НКН",
+    "region": "Регион деятельности",
+    "not_found": "Носитель не найден",
+    "back_to_bearers": "Вернуться к носителям"
+  },
+  "news_detail": {
+    "published_by": "Опубликовано",
+    "back_to_news": "Вернуться к новостям",
+    "related_news": "Похожие новости",
+    "not_found": "Новость не найдена"
   }
 }
