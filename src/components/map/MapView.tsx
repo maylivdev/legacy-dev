@@ -1,10 +1,7 @@
-import { useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { useEffect, useRef, useMemo } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/components/ui/button';
 import { getLocalizedField } from '@/types';
 import type { IchElement, Language } from '@/types';
 import { REGIONS, UNESCO_DOMAINS } from '@/data/seed';
@@ -33,26 +30,6 @@ function createCustomIcon(color: string) {
   });
 }
 
-function ResetViewButton() {
-  const map = useMap();
-  const { t } = useTranslation();
-
-  return (
-    <div className="leaflet-top leaflet-right" style={{ marginTop: 10, marginRight: 10 }}>
-      <div className="leaflet-control">
-        <Button
-          size="sm"
-          variant="secondary"
-          className="shadow-md"
-          onClick={() => map.setView(KAZAKHSTAN_CENTER, DEFAULT_ZOOM)}
-        >
-          {t('map_page.reset_view')}
-        </Button>
-      </div>
-    </div>
-  );
-}
-
 interface Props {
   elements: IchElement[];
   height?: string;
@@ -62,62 +39,95 @@ interface Props {
 export default function MapView({ elements, height = '600px', showReset = true }: Props) {
   const { t, i18n } = useTranslation();
   const lang = i18n.language as Language;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<L.Map | null>(null);
+  const markersRef = useRef<L.LayerGroup | null>(null);
 
-  const markers = useMemo(
+  const markerData = useMemo(
     () =>
       elements
         .filter((el) => el.status === 'published' && el.latitude && el.longitude)
         .map((el) => {
           const color = DOMAIN_COLORS[el.unesco_domain_id] || '#6b7280';
-          const icon = createCustomIcon(color);
           const region = REGIONS.find((r) => r.id === el.region_id);
           const domain = UNESCO_DOMAINS.find((d) => d.id === el.unesco_domain_id);
-          return { el, icon, region, domain };
+          return { el, color, region, domain };
         }),
     [elements]
   );
 
+  // Initialize map once
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+
+    const map = L.map(containerRef.current, {
+      center: KAZAKHSTAN_CENTER,
+      zoom: DEFAULT_ZOOM,
+      minZoom: 4,
+      maxZoom: 18,
+      scrollWheelZoom: true,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(map);
+
+    markersRef.current = L.layerGroup().addTo(map);
+    mapRef.current = map;
+
+    if (showReset) {
+      const ResetControl = L.Control.extend({
+        onAdd: () => {
+          const btn = L.DomUtil.create('button', 'leaflet-bar leaflet-control');
+          btn.innerHTML = '⟳';
+          btn.style.cssText =
+            'width:34px;height:34px;background:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;';
+          btn.onclick = (e) => {
+            e.stopPropagation();
+            map.setView(KAZAKHSTAN_CENTER, DEFAULT_ZOOM);
+          };
+          return btn;
+        },
+      });
+      new ResetControl({ position: 'topright' }).addTo(map);
+    }
+
+    return () => {
+      map.remove();
+      mapRef.current = null;
+      markersRef.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Update markers
+  useEffect(() => {
+    if (!markersRef.current) return;
+    markersRef.current.clearLayers();
+
+    markerData.forEach(({ el, color, region, domain }) => {
+      const icon = createCustomIcon(color);
+      const elName = getLocalizedField(el, 'name', lang);
+      const domainName = domain ? getLocalizedField(domain, 'name', lang) : '';
+      const regionName = region ? getLocalizedField(region, 'name', lang) : '';
+
+      const popup = `
+        <div style="min-width:180px">
+          <h3 style="font-weight:600;font-size:14px;margin:0 0 4px">${elName}</h3>
+          ${domain ? `<span style="display:inline-block;border-radius:9999px;padding:2px 8px;font-size:10px;font-weight:500;color:white;background:${color};margin-bottom:4px">${domainName}</span>` : ''}
+          ${region ? `<p style="font-size:12px;color:#6b7280;margin:0 0 8px">${regionName}</p>` : ''}
+          <a href="/catalog/${el.id}" style="font-size:12px;font-weight:500;color:#2563eb;text-decoration:none">${t('map_page.view_details')} →</a>
+        </div>`;
+
+      L.marker([el.latitude, el.longitude], { icon })
+        .bindPopup(popup)
+        .addTo(markersRef.current!);
+    });
+  }, [markerData, lang, t]);
+
   return (
     <div style={{ height }} className="w-full rounded-xl overflow-hidden border">
-      <MapContainer
-        center={KAZAKHSTAN_CENTER}
-        zoom={DEFAULT_ZOOM}
-        minZoom={4}
-        maxZoom={18}
-        className="h-full w-full z-0"
-        scrollWheelZoom
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {showReset && <ResetViewButton />}
-        {markers.map(({ el, icon, region, domain }) => (
-          <Marker key={el.id} position={[el.latitude, el.longitude]} icon={icon}>
-            <Popup>
-              <div className="min-w-[180px]">
-                <h3 className="font-semibold text-sm mb-1">{getLocalizedField(el, 'name', lang)}</h3>
-                {domain && (
-                  <span
-                    className="inline-block rounded-full px-2 py-0.5 text-[10px] font-medium text-white mb-1"
-                    style={{ backgroundColor: DOMAIN_COLORS[el.unesco_domain_id] }}
-                  >
-                    {getLocalizedField(domain, 'name', lang)}
-                  </span>
-                )}
-                {region && (
-                  <p className="text-xs text-gray-500 mb-2">
-                    {getLocalizedField(region, 'name', lang)}
-                  </p>
-                )}
-                <Link to={`/catalog/${el.id}`} className="text-xs font-medium text-blue-600 hover:underline">
-                  {t('map_page.view_details')} →
-                </Link>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+      <div ref={containerRef} className="h-full w-full z-0" />
     </div>
   );
 }
