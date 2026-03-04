@@ -155,5 +155,72 @@
     "back_to_news": "Back to news",
     "related_news": "Related News",
     "not_found": "News article not found"
+  },
+  "admin": {
+    "login": "Admin Login",
+    "email": "Email",
+    "password": "Password",
+    "login_button": "Sign In",
+    "logout": "Log Out",
+    "dashboard": "Dashboard",
+    "welcome": "Welcome",
+    "stats": {
+      "total_elements": "Total ICH Elements",
+      "total_bearers": "Total Bearers",
+      "total_news": "Total News",
+      "pending_approvals": "Pending Approvals"
+    },
+    "elements": {
+      "title": "ICH Elements",
+      "add_new": "Add Element",
+      "edit": "Edit",
+      "delete": "Delete",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "status_published": "Published",
+      "status_draft": "Draft"
+    },
+    "bearers": {
+      "title": "Bearers",
+      "add_new": "Add Bearer"
+    },
+    "news": {
+      "title": "News",
+      "add_new": "Add Article"
+    },
+    "users": {
+      "title": "Users",
+      "add_new": "Add User",
+      "role": "Role",
+      "status": "Status",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "form": {
+      "basic_info": "Basic Information",
+      "classification": "Classification",
+      "location": "Location",
+      "media": "Media",
+      "related_bearers": "Related Bearers",
+      "status": "Status",
+      "save_draft": "Save as Draft",
+      "publish": "Publish",
+      "save": "Save",
+      "cancel": "Cancel",
+      "required": "Required field",
+      "upload_photo": "Upload Photo",
+      "upload_audio": "Upload Audio",
+      "add_video": "Add Video",
+      "latitude": "Latitude",
+      "longitude": "Longitude"
+    },
+    "messages": {
+      "save_success": "Saved successfully",
+      "save_error": "Save error",
+      "delete_confirm": "Are you sure you want to delete?",
+      "delete_success": "Deleted successfully",
+      "login_error": "Invalid email or password",
+      "permission_denied": "Insufficient permissions"
+    }
   }
 }
