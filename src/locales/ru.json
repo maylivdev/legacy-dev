@@ -155,5 +155,72 @@
     "back_to_news": "Вернуться к новостям",
     "related_news": "Похожие новости",
     "not_found": "Новость не найдена"
+  },
+  "admin": {
+    "login": "Вход в админ-панель",
+    "email": "Email",
+    "password": "Пароль",
+    "login_button": "Войти",
+    "logout": "Выйти",
+    "dashboard": "Панель управления",
+    "welcome": "Добро пожаловать",
+    "stats": {
+      "total_elements": "Всего элементов НКН",
+      "total_bearers": "Всего носителей",
+      "total_news": "Всего новостей",
+      "pending_approvals": "Ожидают модерации"
+    },
+    "elements": {
+      "title": "Элементы НКН",
+      "add_new": "Добавить элемент",
+      "edit": "Редактировать",
+      "delete": "Удалить",
+      "publish": "Опубликовать",
+      "unpublish": "Снять с публикации",
+      "status_published": "Опубликовано",
+      "status_draft": "Черновик"
+    },
+    "bearers": {
+      "title": "Носители",
+      "add_new": "Добавить носителя"
+    },
+    "news": {
+      "title": "Новости",
+      "add_new": "Добавить новость"
+    },
+    "users": {
+      "title": "Пользователи",
+      "add_new": "Добавить пользователя",
+      "role": "Роль",
+      "status": "Статус",
+      "active": "Активен",
+      "inactive": "Неактивен"
+    },
+    "form": {
+      "basic_info": "Основная информация",
+      "classification": "Классификация",
+      "location": "Местоположение",
+      "media": "Медиа",
+      "related_bearers": "Связанные носители",
+      "status": "Статус",
+      "save_draft": "Сохранить как черновик",
+      "publish": "Опубликовать",
+      "save": "Сохранить",
+      "cancel": "Отмена",
+      "required": "Обязательное поле",
+      "upload_photo": "Загрузить фото",
+      "upload_audio": "Загрузить аудио",
+      "add_video": "Добавить видео",
+      "latitude": "Широта",
+      "longitude": "Долгота"
+    },
+    "messages": {
+      "save_success": "Успешно сохранено",
+      "save_error": "Ошибка сохранения",
+      "delete_confirm": "Вы уверены, что хотите удалить?",
+      "delete_success": "Успешно удалено",
+      "login_error": "Неверный email или пароль",
+      "permission_denied": "Недостаточно прав"
+    }
   }
 }

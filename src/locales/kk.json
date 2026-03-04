@@ -155,5 +155,72 @@
     "back_to_news": "Жаңалықтарға оралу",
     "related_news": "Ұқсас жаңалықтар",
     "not_found": "Жаңалық табылмады"
+  },
+  "admin": {
+    "login": "Әкімшілік панеліне кіру",
+    "email": "Email",
+    "password": "Құпия сөз",
+    "login_button": "Кіру",
+    "logout": "Шығу",
+    "dashboard": "Басқару панелі",
+    "welcome": "Қош келдіңіз",
+    "stats": {
+      "total_elements": "МЕМ элементтері",
+      "total_bearers": "Жеткізушілер",
+      "total_news": "Жаңалықтар",
+      "pending_approvals": "Модерация күтуде"
+    },
+    "elements": {
+      "title": "МЕМ элементтері",
+      "add_new": "Элемент қосу",
+      "edit": "Өзгерту",
+      "delete": "Жою",
+      "publish": "Жариялау",
+      "unpublish": "Жариялаудан алу",
+      "status_published": "Жарияланған",
+      "status_draft": "Жоба"
+    },
+    "bearers": {
+      "title": "Жеткізушілер",
+      "add_new": "Жеткізуші қосу"
+    },
+    "news": {
+      "title": "Жаңалықтар",
+      "add_new": "Жаңалық қосу"
+    },
+    "users": {
+      "title": "Пайдаланушылар",
+      "add_new": "Пайдаланушы қосу",
+      "role": "Рөлі",
+      "status": "Мәртебесі",
+      "active": "Белсенді",
+      "inactive": "Белсенді емес"
+    },
+    "form": {
+      "basic_info": "Негізгі ақпарат",
+      "classification": "Жіктеу",
+      "location": "Орналасу",
+      "media": "Медиа",
+      "related_bearers": "Байланысты жеткізушілер",
+      "status": "Мәртебесі",
+      "save_draft": "Жоба ретінде сақтау",
+      "publish": "Жариялау",
+      "save": "Сақтау",
+      "cancel": "Бас тарту",
+      "required": "Міндетті өріс",
+      "upload_photo": "Фото жүктеу",
+      "upload_audio": "Аудио жүктеу",
+      "add_video": "Бейне қосу",
+      "latitude": "Ендік",
+      "longitude": "Бойлық"
+    },
+    "messages": {
+      "save_success": "Сәтті сақталды",
+      "save_error": "Сақтау қатесі",
+      "delete_confirm": "Жоюға сенімдісіз бе?",
+      "delete_success": "Сәтті жойылды",
+      "login_error": "Email немесе құпия сөз қате",
+      "permission_denied": "Құқықтар жеткіліксіз"
+    }
   }
 }
