@@ -66,6 +66,7 @@ export default function MapView({ elements, height = '600px', showReset = true }
       minZoom: 4,
       maxZoom: 18,
       scrollWheelZoom: true,
+      attributionControl: false,
     });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
