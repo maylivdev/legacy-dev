@@ -25,6 +25,7 @@ export default function LocationMap({ latitude, longitude, name, color = '#2563e
       zoomControl: false,
       scrollWheelZoom: false,
       dragging: false,
+      attributionControl: false,
     });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
