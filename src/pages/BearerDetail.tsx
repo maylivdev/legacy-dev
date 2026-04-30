@@ -7,6 +7,8 @@ import type { Language } from '@/types';
 import VideoGallery from '@/components/elements/VideoGallery';
 import RelatedElements from '@/components/elements/RelatedElements';
 import ShareButtons from '@/components/elements/ShareButtons';
+import LocationMap from '@/components/elements/LocationMap';
+import ContactBearerForm from '@/components/bearers/ContactBearerForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -73,6 +75,18 @@ export default function BearerDetail() {
             </div>
           </section>
 
+          {/* Region map */}
+          {region && (
+            <section>
+              <h2 className="text-2xl font-semibold mb-4">{t('bearer_detail.region_map')}</h2>
+              <LocationMap
+                latitude={region.latitude}
+                longitude={region.longitude}
+                name={getLocalizedField(region, 'name', lang)}
+              />
+            </section>
+          )}
+
           {/* Awards */}
           {bearer.awards && (
             <section>
@@ -83,6 +97,9 @@ export default function BearerDetail() {
 
           {/* Video interviews */}
           <VideoGallery videos={bearer.video_interviews} title={t('bearer_detail.video_interviews')} />
+
+          {/* Contact form */}
+          <ContactBearerForm bearerName={bearer.full_name} />
         </div>
 
         {/* Sidebar */}
