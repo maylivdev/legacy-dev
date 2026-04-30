@@ -22,23 +22,35 @@ export const REGIONS: Region[] = [
 
 export const UNESCO_DOMAINS: UnescoDomain[] = [
   {
-    id: 'oral_traditions', name_kk: 'Ауызша дәстүрлер мен көріністер', name_ru: 'Устные традиции и формы выражения', name_en: 'Oral traditions and expressions',
+    id: 'oral_traditions',
+    name_kk: 'Ауызша дәстүрлер мен өрнектер, оның ішінде тіл — мәдени мұраның тасымалдаушысы ретінде',
+    name_ru: 'Устные традиции и формы выражения, включая язык как носитель нематериального культурного наследия',
+    name_en: 'Oral traditions and expressions, including language as a vehicle of the intangible cultural heritage',
     description_kk: 'Тіл, эпос, аңыз, ертегі, мақал-мәтел', description_ru: 'Язык, эпос, легенды, сказки, пословицы', description_en: 'Language, epic, legends, tales, proverbs',
   },
   {
-    id: 'performing_arts', name_kk: 'Орындаушылық өнер', name_ru: 'Исполнительские искусства', name_en: 'Performing arts',
+    id: 'performing_arts', name_kk: 'Өнер өнімдері', name_ru: 'Исполнительские искусства', name_en: 'Performing arts',
     description_kk: 'Музыка, би, театр', description_ru: 'Музыка, танцы, театр', description_en: 'Music, dance, theatre',
   },
   {
-    id: 'social_practices', name_kk: 'Әлеуметтік практикалар, рәсімдер', name_ru: 'Социальные практики, ритуалы', name_en: 'Social practices, rituals and festive events',
+    id: 'social_practices',
+    name_kk: 'Әлеуметтік практикалар, рәсімдер мен мерекелік іс-шаралар',
+    name_ru: 'Обычаи, обряды, празднества',
+    name_en: 'Social practices, rituals and festive events',
     description_kk: 'Салт-дәстүрлер, мерекелер, рәсімдер', description_ru: 'Обычаи, праздники, ритуалы', description_en: 'Customs, celebrations, rituals',
   },
   {
-    id: 'nature_knowledge', name_kk: 'Табиғат пен әлем туралы білім', name_ru: 'Знания о природе и вселенной', name_en: 'Knowledge and practices concerning nature and the universe',
+    id: 'nature_knowledge',
+    name_kk: 'Табиғат пен ғаламға қатысты білім мен практика',
+    name_ru: 'Знания и обычаи, связанные с природой и вселенной',
+    name_en: 'Knowledge and practices concerning nature and the universe',
     description_kk: 'Дәстүрлі медицина, астрономия, малшылық', description_ru: 'Традиционная медицина, астрономия, скотоводство', description_en: 'Traditional medicine, astronomy, herding',
   },
   {
-    id: 'craftsmanship', name_kk: 'Дәстүрлі қолөнер', name_ru: 'Традиционные ремёсла', name_en: 'Traditional craftsmanship',
+    id: 'craftsmanship',
+    name_kk: 'Дәстүрлі қолөнер шеберлігі',
+    name_ru: 'Традиционное ремесленное мастерство',
+    name_en: 'Traditional craftsmanship',
     description_kk: 'Киіз үй, кілем, зергерлік, ағаш өңдеу', description_ru: 'Юрта, ковры, ювелирное дело, деревообработка', description_en: 'Yurt, carpets, jewelry, woodworking',
   },
 ];
