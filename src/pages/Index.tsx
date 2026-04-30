@@ -114,17 +114,20 @@ export default function Index() {
       <section className="border-t bg-muted py-16">
         <div className="container">
           <h2 className="mb-8 text-center text-2xl font-bold">{t('sections.resources')}</h2>
-          <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
-            <a href="https://www.unesco.org" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-lg border bg-card p-4 transition-shadow hover:shadow-md">
-              <ExternalLink className="h-5 w-5 text-primary" />
-              <span className="font-medium">{t('footer.unesco')}</span>
-            </a>
-            <a href="https://ich.unesco.org" target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-lg border bg-card p-4 transition-shadow hover:shadow-md">
-              <ExternalLink className="h-5 w-5 text-primary" />
-              <span className="font-medium">{t('footer.ich_convention')}</span>
-            </a>
+          <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { url: 'https://www.unesco.org', key: 'unesco' },
+              { url: 'https://ich.unesco.org/en/convention', key: 'ich_convention' },
+              { url: 'https://ich.unesco.org/en/lists', key: 'ich_registry' },
+              { url: 'https://natcom.unesco.kz', key: 'national_commission' },
+              { url: 'https://www.icesco.org', key: 'icesco' },
+            ].map((r) => (
+              <a key={r.key} href={r.url} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-lg border bg-card p-4 transition-shadow hover:shadow-md">
+                <ExternalLink className="h-5 w-5 text-primary shrink-0" />
+                <span className="font-medium">{t(`footer.${r.key}`)}</span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
