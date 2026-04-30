@@ -8,7 +8,8 @@
     "search": "Search",
     "map": "Map",
     "admin": "Admin",
-    "login": "Login"
+    "login": "Login",
+    "commission": "About Commission"
   },
   "hero": {
     "title": "Intangible Cultural Heritage of Kazakhstan",
@@ -31,7 +32,14 @@
     "links": "Useful Links",
     "unesco": "Official UNESCO Website",
     "ich_convention": "ICH Convention",
-    "copyright": "© 2026 ICH Registry. All rights reserved."
+    "copyright": "© 2026 ICH Registry. All rights reserved.",
+    "ich_registry": "UNESCO ICH Registry",
+    "national_commission": "National Commission for UNESCO",
+    "icesco": "ICESCO",
+    "about_memm_title": "About MEMM",
+    "about_memm_text": "MEMM is a national project for documenting and preserving Kazakhstan's intangible cultural heritage.",
+    "catalog_link": "ICH Elements Catalog",
+    "bearers_link": "ICH Bearers"
   },
   "filters": {
     "region": "Region",
@@ -87,7 +95,8 @@
     "search_placeholder": "Search by name...",
     "view_profile": "View profile",
     "practices": "Practices",
-    "no_results": "No bearers found"
+    "no_results": "No bearers found",
+    "etc": "etc."
   },
   "news_page": {
     "title": "News",
@@ -148,13 +157,36 @@
     "practiced_elements": "ICH Elements",
     "region": "Region of Activity",
     "not_found": "Bearer not found",
-    "back_to_bearers": "Back to bearers"
+    "back_to_bearers": "Back to bearers",
+    "region_map": "Activity Region",
+    "contact_title": "Contact Bearer",
+    "contact_name": "Your name",
+    "contact_email": "Email",
+    "contact_message": "Message",
+    "contact_submit": "Send",
+    "contact_success": "Message sent!",
+    "contact_required": "Please fill in all fields correctly",
+    "contact_invalid_email": "Please enter a valid email"
   },
   "news_detail": {
     "published_by": "Published by",
     "back_to_news": "Back to news",
     "related_news": "Related News",
     "not_found": "News article not found"
+  },
+  "commission": {
+    "title": "National Commission of the Republic of Kazakhstan for UNESCO and ICESCO",
+    "subtitle": "Coordinating body that supports the implementation of UNESCO and ICESCO programmes in Kazakhstan",
+    "intro": "The National Commission of the Republic of Kazakhstan for UNESCO and ICESCO is a coordinating body that supports the implementation of UNESCO and ICESCO programmes in the country and the development of international cooperation in education, science, culture, and communication.",
+    "mission_title": "Mission and Objectives",
+    "mission_text": "The mission of the commission is to support the preservation and development of Kazakhstan's cultural, scientific, and educational potential, represent the country's interests in UNESCO and ICESCO, and coordinate joint programmes and projects.",
+    "areas_title": "Key Areas",
+    "area_education": "Education",
+    "area_science": "Science",
+    "area_culture": "Culture",
+    "area_communication": "Communication and Information",
+    "links_title": "Useful Links",
+    "contact_title": "Contact"
   },
   "admin": {
     "login": "Admin Login",

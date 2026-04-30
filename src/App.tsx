@@ -14,6 +14,7 @@ import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import SearchPage from "./pages/SearchPage";
 import MapPage from "./pages/MapPage";
+import CommissionPage from "./pages/CommissionPage";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/admin/Login";
 import AdminLayout from "./components/admin/AdminLayout";
@@ -48,6 +49,7 @@ const App = () => (
               <Route path="/news/:id" element={<NewsDetail />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/map" element={<MapPage />} />
+              <Route path="/commission" element={<CommissionPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
             {/* Admin routes */}

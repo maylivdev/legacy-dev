@@ -5,7 +5,7 @@ import { Search, SearchX, MapPin } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { REGIONS, SAMPLE_BEARERS, SAMPLE_BEARER_ELEMENTS } from '@/data/seed';
+import { REGIONS, SAMPLE_BEARERS, SAMPLE_BEARER_ELEMENTS, SAMPLE_ELEMENTS } from '@/data/seed';
 import { getLocalizedField } from '@/types';
 import type { Language } from '@/types';
 
@@ -64,7 +64,17 @@ export default function BearersPage() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((bearer) => {
             const region = REGIONS.find((r) => r.id === bearer.region_id);
-            const elCount = SAMPLE_BEARER_ELEMENTS.filter((be) => be.bearer_id === bearer.id).length;
+            const bearerElementIds = SAMPLE_BEARER_ELEMENTS
+              .filter((be) => be.bearer_id === bearer.id)
+              .map((be) => be.element_id);
+            const bearerElements = bearerElementIds
+              .map((id) => SAMPLE_ELEMENTS.find((e) => e.id === id))
+              .filter((e): e is NonNullable<typeof e> => Boolean(e));
+            const shown = bearerElements.slice(0, 3).map((e) => getLocalizedField(e, 'name', lang));
+            const hasMore = bearerElements.length > 3;
+            const elementsLine = shown.length
+              ? shown.join(', ') + (hasMore ? ` ${t('bearers_page.etc')}` : '')
+              : null;
             return (
               <Link key={bearer.id} to={`/bearers/${bearer.id}`}>
                 <Card className="group h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
@@ -84,9 +94,11 @@ export default function BearersPage() {
                           {getLocalizedField(region, 'name', lang)}
                         </p>
                       )}
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {t('bearers_page.practices')}: {elCount}
-                      </p>
+                      {elementsLine && (
+                        <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2">
+                          <span className="font-medium text-foreground/80">{t('bearers_page.practices')}:</span> {elementsLine}
+                        </p>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
