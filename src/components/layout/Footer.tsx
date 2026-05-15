@@ -12,7 +12,7 @@ export default function Footer() {
           {/* About МЕММ */}
           <div>
             <div className="mb-3">
-              <img src={logo} alt="memm.kz" className="h-40 w-auto object-contain" />
+              <img src={logo} alt="memm.kz" className="h-10 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed opacity-80">
               {t('footer.description')}
