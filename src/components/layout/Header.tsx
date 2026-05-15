@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import type { Language } from '@/types';
+import logo from '@/assets/logo.png';
 
 const LANGUAGES: { code: Language; label: string }[] = [
   { code: 'kk', label: 'Қазақша' },
@@ -38,12 +39,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-lg">
-            М
-          </div>
-          <span className="hidden font-semibold text-foreground sm:inline-block">
-            МЕММ
-          </span>
+          <img src={logo} alt="memm.kz" className="h-9 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
