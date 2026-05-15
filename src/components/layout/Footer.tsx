@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import logo from '@/assets/logo.png';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -10,11 +11,8 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* About МЕММ */}
           <div>
-            <div className="mb-3 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-                М
-              </div>
-              <span className="font-semibold text-lg">МЕММ</span>
+            <div className="mb-3">
+              <img src={logo} alt="memm.kz" className="h-10 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed opacity-80">
               {t('footer.description')}
