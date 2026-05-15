@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="memm.kz" className="h-9 w-auto object-contain" />
+          <img src={logo} alt="memm.kz" className="h-36 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
