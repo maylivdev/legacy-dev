@@ -36,10 +36,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-40 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="memm.kz" className="h-9 w-auto object-contain" />
+          <img src={logo} alt="memm.kz" className="h-36 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
