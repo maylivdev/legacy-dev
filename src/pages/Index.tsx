@@ -10,6 +10,7 @@ import type { Language } from '@/types';
 import ElementCard from '@/components/elements/ElementCard';
 import NewsCard from '@/components/news/NewsCard';
 import MapView from '@/components/map/MapView';
+import heroImage from '@/assets/hero.png';
 
 export default function Index() {
   const { t, i18n } = useTranslation();
@@ -18,22 +19,23 @@ export default function Index() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary py-20 text-primary-foreground lg:py-32">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%)',
-            backgroundSize: '20px 20px',
-          }} />
-        </div>
+      <section className="relative overflow-hidden py-20 text-primary-foreground lg:py-32 min-h-[600px] flex items-center">
+        <img
+          src={heroImage}
+          alt={t('hero.title')}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
         <div className="container relative">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="max-w-2xl">
             <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
               {t('hero.title')}
             </h1>
             <p className="mb-8 text-lg opacity-90 sm:text-xl">
               {t('hero.subtitle')}
             </p>
-            <div className="mx-auto flex max-w-lg gap-2">
+            <div className="flex max-w-lg gap-2">
               <div className="relative flex-1">
                 <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 opacity-50" />
                 <Link to="/search" className="block">
